@@ -10,11 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const passwordInput = document.getElementById("password").value;
 
         // ID dan password sederhana untuk keperluan rekrayasa
-        const sampleUsername = "admin";
-        const samplePassword = "IPUFH";
+        const sampleUsers = [
+            { username: "admin", password: "IPUFH" },
+            { username: "lulu", password: "123" } // Menambahkan akun lulu
+        ];
 
         // Validasi username dan password
-        if (validateLogin(usernameInput, passwordInput, sampleUsername, samplePassword)) {
+        if (validateLogin(usernameInput, passwordInput, sampleUsers)) {
             // Cek apakah peringatan login berhasil sudah ditampilkan sebelumnya
             const loginSuccessAlertShown = localStorage.getItem("loginSuccessAlertShown");
 
@@ -34,14 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-function validateLogin(username, password, sampleUsername, samplePassword) {
+function validateLogin(username, password, sampleUsers) {
     // Periksa apakah username dan password sesuai dengan contoh
-    return username === sampleUsername && password === samplePassword;
+    return sampleUsers.some(user => user.username === username && user.password === password);
 }
 
 function checkLoginStatus() {
     // Cek apakah ada status login sebelumnya
     const isLoggedIn = localStorage.getItem("isLoggedIn");
 }
-
