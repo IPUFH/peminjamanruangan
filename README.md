@@ -1,6 +1,5 @@
-# peminjamanruangan
-Tentang kami
-Nama pembuat: 
+# Peminjaman Ruangan
+# Tentang Kami
 Nida Fauziah Hasanah (2210631010115)
 Lutfia Azzahra (2210631010104)
 Rika Al Mirah 
